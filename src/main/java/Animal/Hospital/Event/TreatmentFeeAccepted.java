@@ -2,36 +2,27 @@ package Animal.Hospital.Event;
 
 import Animal.Hospital.AbstractEvent;
 
-public class TreatmentFeeAccepted extends AbstractEvent {
+public class TreatmentFeeAccepted  {
 
-    private Long id;
     private Long reservationId;
     private Long fee;
     private String eventType;
+    private String timeStamp;
 
-    @Override
+    public String getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
     public String getEventType() {
         return eventType;
     }
 
-    @Override
     public void setEventType(String eventType) {
         this.eventType = eventType;
-    }
-
-    public TreatmentFeeAccepted(Long reservationId, Long fee){
-        super();
-        this.reservationId = reservationId;
-        this.fee = fee;
-        this.eventType  = TreatmentFeeAccepted.class.getSimpleName();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Long getReservationId() {
