@@ -12,9 +12,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients
 public class Application {
 
-    @Autowired
-    private UserRepository repository;
-
     protected static ApplicationContext applicationContext;
     public static void main(String[] args) {
         applicationContext = SpringApplication.run(Application.class, args);
