@@ -1,10 +1,9 @@
 package Animal.Hospital;
 
-import org.springframework.data.annotation.Id;
 
-import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +18,7 @@ public class ReservationStat {
     private String reservationDate;
     private String phoneNumber;
     private String reservationStatus;
+    private Long fee;
 
     public Long getId() {
         return id;
@@ -67,4 +67,13 @@ public class ReservationStat {
     public void setReservationStatus(String reservationStatus) {
         this.reservationStatus = reservationStatus;
     }
+
+    public Long getFee() {
+        return fee;
+    }
+
+    public void setFee(Long fee) {
+        this.fee = fee;
+    }
+
 }

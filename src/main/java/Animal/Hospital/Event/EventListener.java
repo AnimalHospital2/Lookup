@@ -92,7 +92,16 @@ public class EventListener {
             /**
              * 수납 완료 이벤트
              */
+            else if( event.getEventType().equals(TreatmentFeeAccepted.class.getSimpleName())) {
+                TreatmentFeeAccepted treatmentFeeAccepted = objectMapper.readValue(message, TreatmentFeeAccepted.class);
 
+                ReservationStat reservationStat = new ReservationStat();
+                reservationStat.setReservationId(treatmentFeeAccepted.getReservationId());
+                reservationStat.setFee(treatmentFeeAccepted.getFee());
+                reservationStat.setReservationStatus("수납 완료");
+
+                reservationStatRepository.save(reservationStat);
+            }
 
         } catch (IOException e) {
             e.printStackTrace();
